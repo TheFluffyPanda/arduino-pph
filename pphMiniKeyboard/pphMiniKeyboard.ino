@@ -80,7 +80,9 @@ class button {
           Keyboard.press('d');
           break;
         case BUTTON_PIN3:
-          // TBD
+          // Show / Hide ScreenBrush
+          Keyboard.press(KEY_LEFT_ALT);
+          Keyboard.press(KEY_TAB);
           break;
         case BUTTON_PIN4:
           // ctrl-shft-cmd-4 (mac capture part of screen to clipboard)
@@ -99,7 +101,10 @@ class button {
           Keyboard.press('v');
           break;
         case BUTTON_PIN7:
-          // TBD
+          // Full Screen Chrome Tabs Toggle
+          Keyboard.press(KEY_LEFT_SHIFT);
+          Keyboard.press(KEY_LEFT_GUI);
+          Keyboard.press('f');
           break;
         case BUTTON_PIN8:
           // shft-cmd-5 (mac capture screen utility)
