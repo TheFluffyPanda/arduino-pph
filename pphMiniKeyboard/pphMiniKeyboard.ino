@@ -24,6 +24,8 @@
  *
  */
 
+#include "Keyboard.h"
+
 // ---------------------------------
 // Key definitions
 #define BUTTON_KEY1 KEY_F13
@@ -47,7 +49,7 @@
 #define BUTTON_PIN8 9
 // ---------------------------------
 
-#include "Keyboard.h"
+
 
 // Button helper class for handling press/release and debouncing
 class button {
