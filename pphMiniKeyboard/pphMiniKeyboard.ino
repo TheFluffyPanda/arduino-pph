@@ -93,7 +93,8 @@ class button {
           break;
         case BUTTON_PIN5:
           // F17 - mapped to "S" script on work macbook
-          Keyboard.press(key);
+          //Keyboard.press(key);
+          Keyboard.print("Saraiswonderful08");
           break;
         case BUTTON_PIN6:
           // cmd-v (mac paste)
