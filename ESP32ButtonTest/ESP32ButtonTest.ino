@@ -4,18 +4,18 @@
 #include <BleKeyboard.h> // https://github.com/T-vK/ESP32-BLE-Keyboard
 
 // Pin definitions
-#define KEY_1_1 25
-#define KEY_1_2 37
-#define KEY_1_3 38
-#define KEY_1_4 39
-#define KEY_2_1 34
-#define KEY_2_2 35
-#define KEY_2_3 32
-#define KEY_2_4 33
-#define KEY_3_1 22
-#define KEY_3_2 19
-#define KEY_3_3 23
-#define KEY_3_4 18
+#define KEY_1_1 22
+#define KEY_1_2 19
+#define KEY_1_3 23
+#define KEY_1_4 18
+#define KEY_2_1 26
+#define KEY_2_2 27
+#define KEY_2_3 14
+#define KEY_2_4 12
+#define KEY_3_1 5
+#define KEY_3_2 17
+#define KEY_3_3 0
+#define KEY_3_4 2
 
 // Name, manufacturer, initial battery level
 BleKeyboard bleKeyboard("PandaBoard", "PHowie", 100);
@@ -40,81 +40,56 @@ class button {
     }
 
     lastPressed = millis();
-    // Only do something with the keypress if we
-    // are connected to something via bluetooth
     if (bleKeyboard.isConnected() && state){
       Serial.println(key);
       switch (key) {
         case KEY_1_1:
-          // cmd-e (gmeet cam toggle)
-          bleKeyboard.print("Button 1.1");
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('e');
+          bleKeyboard.print("1");
+          draw("1 Pressed");
           break;
         case KEY_1_2:
-          // cmd-d (gmeet mic toggle)
-          bleKeyboard.print("Button 1.2");
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('d');
+          bleKeyboard.print("2");
+          draw("2 Pressed");
           break;
         case KEY_1_3:
-          // Show / Hide ScreenBrush
-          bleKeyboard.print("Button 1.3");
-          //bleKeyboard.press(KEY_LEFT_ALT);
-          //bleKeyboard.press(KEY_TAB);
+          bleKeyboard.print("3");
+          draw("3 Pressed");
           break;
         case KEY_1_4:
-          // ctrl-shft-cmd-4 (mac capture part of screen to clipboard)
-          bleKeyboard.print("Button 1.4");
-          //bleKeyboard.press(KEY_LEFT_CTRL);
-          //bleKeyboard.press(KEY_LEFT_SHIFT);
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('4');
+          bleKeyboard.print("4");
+          draw("4 Pressed");
           break;
         case KEY_2_1:
-          // Type Password
-          bleKeyboard.print("Button 2.1");
-          //bleKeyboard.print("Saraiswonderful08");
+          bleKeyboard.print("1");
+          draw("2x1 Pressed");
           break;
         case KEY_2_2:
-          // cmd-v (mac paste)
-          bleKeyboard.print("Button 2.2");
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('v');
+          bleKeyboard.print("2");
+          draw("2x2 Pressed");
           break;
         case KEY_2_3:
-          // Full Screen Chrome Tabs Toggle
-          bleKeyboard.print("Button 2.3");
-          //bleKeyboard.press(KEY_LEFT_SHIFT);
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('f');
+          bleKeyboard.print("3");
+          draw("2x3 Pressed");
           break;
         case KEY_2_4:
-          // shft-cmd-5 (mac capture screen utility)
-          bleKeyboard.print("Button 2.4");
-          //bleKeyboard.press(KEY_LEFT_SHIFT);
-          //bleKeyboard.press(KEY_LEFT_GUI);
-          //bleKeyboard.press('5');
+          bleKeyboard.print("4");
+          draw("2x4 Pressed");
           break;
         case KEY_3_1:
-          //
-          bleKeyboard.print("Button 3.1");
+          bleKeyboard.print("1");
+          draw("3x1 Pressed");
           break;
         case KEY_3_2:
-          //
-          bleKeyboard.print("Button 3.2");
+          bleKeyboard.print("2");
+          draw("3x2 Pressed");
           break;
         case KEY_3_3:
-          //
-          bleKeyboard.print("Button 3.3");
+          bleKeyboard.print("3");
+          draw("3x3 Pressed");
           break;
         case KEY_3_4:
-          //
-          bleKeyboard.print("Button 3.4");
-          break;
-        default:
-          // Should never reach here
-          bleKeyboard.press(key);
+          bleKeyboard.print("4");
+          draw("3x4 Pressed");
           break;
       }
     }
