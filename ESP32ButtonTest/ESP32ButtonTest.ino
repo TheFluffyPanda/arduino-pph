@@ -44,52 +44,71 @@ class button {
       Serial.println(key);
       switch (key) {
         case KEY_1_1:
-          bleKeyboard.print("1");
-          draw("1 Pressed");
+          // cmd-e (gmeet cam toggle)
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('e');
+          draw("Cam Toggle");
           break;
         case KEY_1_2:
-          bleKeyboard.print("2");
-          draw("2 Pressed");
+          // cmd-d (gmeet mic toggle)
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('d');
+          draw("Mic Toggle");
           break;
         case KEY_1_3:
-          bleKeyboard.print("3");
-          draw("3 Pressed");
+          // Show / Hide ScreenBrush
+          bleKeyboard.press(KEY_LEFT_ALT);
+          bleKeyboard.press(KEY_TAB);
+          draw("ScreenBrush");
           break;
         case KEY_1_4:
-          bleKeyboard.print("4");
-          draw("4 Pressed");
+          // ctrl-shft-cmd-4 (mac capture part of screen to clipboard)
+          bleKeyboard.press(KEY_LEFT_CTRL);
+          bleKeyboard.press(KEY_LEFT_SHIFT);
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('4');
+          draw("Capture Area");
           break;
         case KEY_2_1:
-          bleKeyboard.print("1");
-          draw("2x1 Pressed");
+          //Password
+          bleKeyboard.print("Saraiswonderful08");
+          draw("S");
           break;
         case KEY_2_2:
-          bleKeyboard.print("2");
-          draw("2x2 Pressed");
+          // cmd-v (mac paste)
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('v');
+          draw("Paste");
           break;
         case KEY_2_3:
-          bleKeyboard.print("3");
-          draw("2x3 Pressed");
+          // Full Screen Chrome Tabs Toggle
+          bleKeyboard.press(KEY_LEFT_SHIFT);
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('f');
+          draw("Full Screen Chrome Menu");
           break;
         case KEY_2_4:
-          bleKeyboard.print("4");
-          draw("2x4 Pressed");
+          // shft-cmd-5 (mac capture screen utility)
+          bleKeyboard.press(KEY_LEFT_SHIFT);
+          bleKeyboard.press(KEY_LEFT_GUI);
+          bleKeyboard.press('5');
+          draw("Screenshot");
           break;
         case KEY_3_1:
           bleKeyboard.print("1");
-          draw("3x1 Pressed");
+          draw("1");
           break;
         case KEY_3_2:
           bleKeyboard.print("2");
-          draw("3x2 Pressed");
+          draw("2");
           break;
         case KEY_3_3:
           bleKeyboard.print("3");
-          draw("3x3 Pressed");
+          draw("3");
           break;
         case KEY_3_4:
           bleKeyboard.print("4");
-          draw("3x4 Pressed");
+          draw("4");
           break;
       }
     }
